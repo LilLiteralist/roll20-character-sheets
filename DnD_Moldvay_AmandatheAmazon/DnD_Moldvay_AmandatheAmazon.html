@@ -207,7 +207,7 @@
                                 <div class="sheet-col-1-16 sheet-vert-middle"><button type='roll' name="Reaction Check" value="&{template:odnd} {{stat=1}} {{name=@{Name}}} {{title=Retainer and Monster Reactions}} {{chaskill=[[@{RetainerReaction-die} + [[@{MOD_CHA}]] + (?{Bonus/Minus|0})]]}}" name='Reaction' title="Reaction Check"></button></div>
                             </div>
                             <div>
-                                <input class="sheet-inMainTxt" style="width:95%">
+                                <input class="sheet-inMainTxt" style="width:95%" name="attr_languages">
                                 <br>
                                 <span>Languages</span>
                             </div>
@@ -353,7 +353,7 @@
                                     <input class="inMainTxt sheet-grid-item-resize" type="text" placeholder="Melee weapon" name="attr_weapon-name">
                                     <div class="sheet-grid-item-resize sheet-backstab-spacing" style="grid-column:4/6;">
                                         <span>Backstab</span>
-                                        <button type='roll' name="Attack_@{MeleeWeaponName}" class="sheet-grid-item-resize" style="width: 25px !important;" value="&{template:odnd} {{combat=1}} {{name=@{Name} Backstab}} {{title=@{weapon-name}}} {{attack=[[ 4 + @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit}[Bonus] + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[2*(@{MeleeDmg_Die}+@{MeleeDmg_Bonus}) ]]}}"></button>
+                                        <button type='roll' name="Attack_@{MeleeWeaponName}" style="width: 25px!important;" value="&{template:odnd} {{combat=1}} {{name=@{Name} Backstab}} {{title=@{weapon-name}}} {{attack=[[ 4 + @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit}[Bonus] + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[2*(@{MeleeDmg_Die}+@{MeleeDmg_Bonus}) ]]}}"></button>
                                     </div>
                                     <input class="inSmallNum_noBorder sheet-grid-item-resize" type="number" name="attr_MeleeMagic" value="0" step="1" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls">
                                     <input class="inSmallNum_noBorder sheet-grid-item-resize" type="number" name="attr_MeleeToHit" value="[[[[@{MOD_STR}]] + @{MeleeMagic}]]" disabled="disabled" title="Your total 'To Hit' bonus (Strength mod + Magic Bonus)">
