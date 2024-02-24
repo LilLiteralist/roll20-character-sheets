@@ -1042,19 +1042,13 @@
                                             <div class="sheet-col-1-6"><input style="width:170px;" type="text" name="attr_Surprise-name" class="sheet-inMainTxt" value="Surprise Check" disabled="disabled"/></div>
                                         </div>
 
-                                        <div class="sheet-col-1-3 sheet-center">&nbsp;</div>
+                                        <div class="sheet-col-1-3">
+                                            <button type='roll' name="Thief: Find Traps" value="/w gm &{template:odnd} {{class=1}} {{name=@{Name}}} {{title=Find Traps}} {{thiefpercentability=[[@{Thief-die}]]}} {{chance=[[{@{FindTraps-chance}+(?{Bonus/Minus|0}),0}kh1]]}}"></button>
+                                            <div class="sheet-col-1-2"><input style="width:150px;" type="text" name="attr_FindTraps-name" class="sheet-inMainTxt" value="Find Trap" disabled="disabled"/></div>
+                                            <div class="sheet-col-1-14 sheet-center">&nbsp;</div>
+                                            <div class="sheet-col-1-4"><input class="inSmallNum" type="number" title="Enter % chance to Find Traps" name="attr_FindTraps-chance" value="0" step="1"/>%</div>
+                                        </div>
 
-                                        <!--<div class="sheet-col-1-3">
-                                            <button type='roll' name="Thief: Hear Noise" value="/w gm &{template:odnd} {{class=1}} {{name=@{Name}}} {{title=@{HearNoise-name}}} {{classability=[[@{Listen-die}]]}} {{chance=[[@{HearNoise-chance}]]}}"></button>
-                                            <div class="sheet-col-1-3"><input style="width:120px;" type="text" name="attr_HearNoise-name" class="sheet-inMainTxt" value="Hear Noise" disabled="disabled"/></div>
-                                            <div class="sheet-col-2-13 sheet-center">&nbsp;</div>
-                                            <div class="sheet-col-1-4 sheet-left" title="Choose your Hear Noise chance">
-                                                <select name="attr_HearNoise-chance" size="1"  style="text-align: center; width: 50px; border-width: 2px 2px 3px 2px; border-color: black; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-bottom-style: solid;">
-                                                    <option value="2" selected="selected">1-2</option>
-                                                    <option value="3">1-3</option>
-                                                </select>
-                                            </div>
-                                        </div>-->
                                         <div class="sheet-col-1-3">
                                             <button type='roll' name="Thief: Hear Noise" value="/w gm &{template:odnd} {{class=1}} {{name=@{Name}}} {{title=Hear Noise}} {{thiefpercentability=[[@{Thief-die}]]}} {{chance=[[{@{HearNoise-chance}+(?{Bonus/Minus|0}),0}kh1]]}}"></button>
                                             <div class="sheet-col-1-2"><input style="width:120px;" type="text" name="attr_HearNoise-name" class="sheet-inMainTxt" value="Hear Noise" disabled="disabled"/></div>
@@ -1074,10 +1068,10 @@
                                         </div>
 
                                         <div class="sheet-col-1-3">
-                                            <button type='roll' name="Thief: Find/Remove Traps" value="/w gm &{template:odnd} {{class=1}} {{name=@{Name}}} {{title=Find or Remove Traps}} {{thiefpercentability=[[@{Thief-die}]]}} {{chance=[[{@{RemoveTraps-chance}+(?{Bonus/Minus|0}),0}kh1]]}}"></button>
-                                            <div class="sheet-col-1-2"><input style="width:150px;" type="text" name="attr_RemoveTraps-name" class="sheet-inMainTxt" value="Find/Remove Trap" disabled="disabled"/></div>
+                                            <button type='roll' name="Thief: Remove Traps" value="/w gm &{template:odnd} {{class=1}} {{name=@{Name}}} {{title=Remove Traps}} {{thiefpercentability=[[@{Thief-die}]]}} {{chance=[[{@{RemoveTraps-chance}+(?{Bonus/Minus|0}),0}kh1]]}}"></button>
+                                            <div class="sheet-col-1-2"><input style="width:150px;" type="text" name="attr_RemoveTraps-name" class="sheet-inMainTxt" value="Remove Trap" disabled="disabled"/></div>
                                             <div class="sheet-col-1-14 sheet-center">&nbsp;</div>
-                                            <div class="sheet-col-1-4"><input class="inSmallNum" type="number" title="Enter % chance to Find/Remove Traps" name="attr_RemoveTraps-chance" value="0" step="1"/>%</div>
+                                            <div class="sheet-col-1-4"><input class="inSmallNum" type="number" title="Enter % chance to Remove Traps" name="attr_RemoveTraps-chance" value="0" step="1"/>%</div>
                                         </div>
 
                                         <div class="sheet-col-1-3">
