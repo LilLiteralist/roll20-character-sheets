@@ -207,7 +207,7 @@
                                 <div class="sheet-col-1-16 sheet-vert-middle"><button type='roll' name="Reaction Check" value="&{template:odnd} {{stat=1}} {{name=@{Name}}} {{title=Retainer and Monster Reactions}} {{chaskill=[[@{RetainerReaction-die} + [[@{MOD_CHA}]] + (?{Bonus/Minus|0})]]}}" name='Reaction' title="Reaction Check"></button></div>
                             </div>
                             <div>
-                                <input type="text" class="sheet-inMainTxt" style="width:95%" name="attr_languages">
+                                <input name="attr_languages" type="text" class="sheet-inMainTxt" style="width:95%">
                                 <br>
                                 <span>Languages</span>
                             </div>
@@ -332,6 +332,7 @@
                                 <div>&nbsp;</div>
                                 <div class="sheet-center sheet-smaller-label sheet-vert-bottom">Ammo</div>
                                 <div class="sheet-center sheet-smaller-label sheet-vert-bottom">Weapon</div>
+                                <div class="sheet-center sheet-smaller-label sheet-vert-bottom">Mastery</div>
                                 <div class="sheet-center sheet-smaller-label sheet-vert-bottom">Range (S/M/L)</div>
                                 <div class="sheet-center sheet-smaller-label sheet-vert-bottom">Range to Target</div>
                                 <div class="sheet-center sheet-smaller-label sheet-vert-bottom">Magic Bonus</div>
@@ -351,6 +352,14 @@
                                     <button type='roll' name="Attack_@{MeleeWeaponName}" class="sheet-grid-item-resize" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{weapon-name}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit}[Bonus] + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die}+@{MeleeDmg_Bonus}]]}}"></button>
                                     <span class="sheet-grid-item-resize" >&nbsp;</span>
                                     <input class="inMainTxt sheet-grid-item-resize" type="text" placeholder="Melee weapon" name="attr_weapon-name">
+                                    <select class="sheet-grid-item-resize" name="attr_weapon-mastery">
+                                        <option value="0">Unskilled</option>
+                                        <option value="1">Basic</option>
+                                        <option value="2">Skilled</option>
+                                        <option value="3">Expert</option>
+                                        <option value="4">Master</option>
+                                        <option value="5">Gr.Master</option>
+                                    </select>
                                     <div class="sheet-grid-item-resize sheet-backstab-spacing" style="grid-column:4/6;">
                                         <span>Backstab</span>
                                         <button type='roll' name="Attack_@{MeleeWeaponName}" style="width: 25px!important;" value="&{template:odnd} {{combat=1}} {{name=@{Name} Backstab}} {{title=@{weapon-name}}} {{attack=[[ 4 + @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit}[Bonus] + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[2*(@{MeleeDmg_Die}+@{MeleeDmg_Bonus}) ]]}}"></button>
@@ -364,6 +373,14 @@
                                     <button type='roll' class="sheet-grid-item-resize" name="Attack_@{MissileWeaponName}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{weapon-name} \n @{RangedDistance}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit}[Bonus] + @{Missile_Halfling}[Halfling] + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die}+@{MissileDmg_Bonus}]]}}"></button>
                                     <input class="inSmallNum_noBorder sheet-grid-item-resize" type="number" name="attr_MissileAmmo" value="0">
                                     <input class="inMainTxt sheet-grid-item-resize" type="text" placeholder="Missile weapon" name="attr_weapon-name">
+                                    <select class="sheet-grid-item-resize" name="attr_weapon-mastery">
+                                        <option value="0">Unskilled</option>
+                                        <option value="1">Basic</option>
+                                        <option value="2">Skilled</option>
+                                        <option value="3">Expert</option>
+                                        <option value="4">Master</option>
+                                        <option value="5">Gr.Master</option>
+                                    </select>
                                     <input class="inMainTxt sheet-grid-item-resize" placeholder="0/0/0" type="text" name="attr_RangedDistance">
                                     <select name="attr_RangeToTarget" type="number" class="sheet-grid-item-resize" title="Choose the distance to your Target">
                                         <option value="1">Short</option>
@@ -1027,7 +1044,7 @@
 
                                         <div class="sheet-col-1-3 sheet-center">&nbsp;</div>
 
-                                        <div class="sheet-col-1-3">
+                                        <!--<div class="sheet-col-1-3">
                                             <button type='roll' name="Thief: Hear Noise" value="/w gm &{template:odnd} {{class=1}} {{name=@{Name}}} {{title=@{HearNoise-name}}} {{classability=[[@{Listen-die}]]}} {{chance=[[@{HearNoise-chance}]]}}"></button>
                                             <div class="sheet-col-1-3"><input style="width:120px;" type="text" name="attr_HearNoise-name" class="sheet-inMainTxt" value="Hear Noise" disabled="disabled"/></div>
                                             <div class="sheet-col-2-13 sheet-center">&nbsp;</div>
@@ -1037,6 +1054,11 @@
                                                     <option value="3">1-3</option>
                                                 </select>
                                             </div>
+                                        </div>-->
+                                        <div class="sheet-col-1-3">
+                                            <button type='roll' name="Thief: Hear Noise" value="/w gm &{template:odnd} {{class=1}} {{name=@{Name}}} {{title=Hear Noise}} {{thiefpercentability=[[@{Thief-die}]]}} {{chance=[[{@{HearNoise-chance}+(?{Bonus/Minus|0}),0}kh1]]}}"></button>
+                                            <div class="sheet-col-1-2"><input style="width:120px;" type="text" name="attr_HearNoise-name" class="sheet-inMainTxt" value="Hear Noise" disabled="disabled"/></div>
+                                            <div class="sheet-col-1-4"><input class="inSmallNum" type="number" title="Enter % chance to Hear Noise" name="attr_HearNoise-chance" value="0" step="1"/>%</div>
                                         </div>
 
                                 </div>
