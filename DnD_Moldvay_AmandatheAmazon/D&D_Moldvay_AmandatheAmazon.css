@@ -6,9 +6,42 @@
 
 /* overall wrapper to fix moving width issues with overflow on hidden sections */
 .charsheet .sheet-overall-wrapper {
-    max-width: 832px;
     padding: 2px;
     border: solid black 3px;
+}
+
+.charsheet .sheet-smaller-label {
+    font-size: 75%!important;
+    font-weight: bold;
+}
+
+input[readonly="readonly"],
+input[disabled="disabled"] {
+    appearance: textfield;
+}
+
+.sheet-melee-ranged-checkbox:checked ~ .sheet-melee-span,
+.sheet-melee-ranged-checkbox:not(:checked) ~ .sheet-ranged-span {
+    display:none;
+}
+
+.charsheet input.sheet-melee-ranged-checkbox {
+    opacity: 0;
+    width:35px;
+    height: 30px;
+    margin-top: -10px;
+}
+
+.sheet-melee-ranged-span {
+    display: inline-block;
+    height: 30px;
+    margin-left: -40px;
+    width: 35px;
+    border: 2px ridge black;
+    background-color: #3834;
+    font-size: 20px;
+    padding-top: 0px;
+    text-align: center;
 }
 
 /* TEMPLATES */
@@ -80,7 +113,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-rollname {
     font-weight: bold;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 1.4em;*/
     font-size: 1.8em;
 
@@ -99,7 +132,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-rollname-wide {
     font-weight: bold;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 1.4em;*/
     font-size: 1.8em;
 
@@ -142,7 +175,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-success {
     color: green;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
@@ -151,7 +184,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-fail {
     color: red;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
@@ -160,7 +193,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-critsuccess {
     color: green;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
@@ -170,7 +203,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-failM {
     color: red;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     /*font-size: 1.7em;*/
     font-size: 2.1em;
@@ -181,7 +214,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-failSM {
     color: red;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     /*font-size: 1.5em;*/
     font-size: 1.9em;
@@ -192,7 +225,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-successM {
     color: green;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     /*font-size: 1.7em;*/
     font-size: 2.1em;
@@ -203,7 +236,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-successSM {
     color: green;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     /*font-size: 1.5em;*/
     font-size: 1.9em;
@@ -214,7 +247,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-successEXSM {
     color: green;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     /*font-size: 1.4em;*/
     font-size: 1.8em;
@@ -224,14 +257,14 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-critfail {
     color: red;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     font-size: 20px;
 }
 
 .sheet-rolltemplate-odnd .sheet-RollTemp-title {
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 1.6em;*/
     font-size: 2.0em;
     font-weight: bold;
@@ -242,7 +275,7 @@
 
 .sheet-rolltemplate-odnd .sheet-RollTemp-name {
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 1.2em;*/
     font-size: 1.6em;
     text-align: center;
@@ -265,7 +298,7 @@
 
 .sheet-rolltemplate-odnd .sheet-RollTemp-info {
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 1.1em;*/
     font-size: 1.5em;
     text-align: center;
@@ -308,7 +341,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-key {
     font-weight: bold;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 1.3em;*/
     font-size: 1.7em;
 
@@ -327,7 +360,7 @@
 .sheet-rolltemplate-odnd .sheet-RollTemp-key-wide {
     font-weight: bold;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 1.3em;*/
     font-size: 1.7em;
 
@@ -358,7 +391,7 @@
     /*font-size: 11px;*/
     font-size: 17px;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     text-align: center;
 
     border: green 1px dashed;
@@ -373,7 +406,7 @@
     /*font-size: 1.3em;*/
     font-size: 1.7em;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     text-align: center;
     line-height: 1.7em;
     font-weight: bold;
@@ -420,7 +453,7 @@
     box-sizing: border-box;
     color: black;
     /*font-family: 'Souvenir', Georgia, serif;*/
-    font-family: 'Patrick Hand', Georgia, serif;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 14px;*/
     font-size: 21px;
     font-weight: normal;
@@ -435,7 +468,7 @@
     box-sizing: border-box;
     color: black;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 14px;*/
     font-size: 21px;
     font-weight: normal;
@@ -484,7 +517,7 @@
     border-color: black;
     border-style: solid;
     /*font-family: 'Gloria Hallelujah', cursive;*/
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Patrick Hand', cursive;
     background-color: transparent;
     color: #454343;
     overflow: visible;
@@ -717,7 +750,7 @@
     padding-right: 6px;
     text-align: left;
     /*font-family: 'Souvenir', Georgia, serif;*/
-    font-family: 'Patrick Hand', Georgia, serif;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 14px;*/
     font-size: 21px;
     font-weight: bold;
@@ -748,7 +781,7 @@
 .charsheet .sheet-ability-text{
     text-align: left;
     /*font-family: 'Souvenir', Georgia, serif;*/
-    font-family: 'Patrick Hand', Georgia, serif;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 12px;*/
     font-size: 18px;
     font-weight: bold;
@@ -795,7 +828,7 @@
     padding-right: 6px;
     text-align: left;
     /*font-family: 'Souvenir', Georgia, serif;*/
-    font-family: 'Patrick Hand', Georgia, serif;
+    font-family: 'Patrick Hand', cursive;
     /*font-size: 14px;*/
     font-size: 21px;
     font-weight: bold;
@@ -3278,3 +3311,44 @@ label div
 }
 
 /* End custom Pure grid css (24 cols) */
+
+/* Actual CSS grid */
+.repcontainer[data-groupname="repeating_attack"] .repitem{
+    display:grid;
+    /* ranged/melee | attack-grid */
+    grid-template-columns: 40px 1fr;
+    column-gap:4px;
+}
+
+.sheet-melee-ranged-checkbox:checked ~ div.sheet-melee-attack-grid {
+    display:none!important;
+}
+
+.sheet-melee-ranged-checkbox:not(:checked) ~ div.sheet-ranged-attack-grid {
+    display:none!important;
+}
+
+.sheet-attack-titles-grid {
+    display:grid;
+    /* checkbox and roll button | ammo | weapon name | mastery | S/M/L | range | magic bonus | total hit bonus | damage die | total damage */
+    grid-template-columns: 70px 2fr 8fr 5fr 4fr 4fr 2fr 2fr 2fr 2fr;
+    column-gap:4px;
+}
+
+.repitem .sheet-melee-attack-grid,
+.repitem .sheet-ranged-attack-grid {
+    display:grid;
+    /* roll button | ammo | weapon name | mastery | S/M/L | range | magic bonus | total hit bonus | damage die | total damage */
+    grid-template-columns: 24px 2fr 8fr 5fr 4fr 4fr 2fr 2fr 2fr 2fr;
+    column-gap:10px;
+}
+
+.sheet-backstab-spacing {
+    grid-column:5/7;
+}
+
+.charsheet .sheet-melee-attack-grid .sheet-grid-item-resize,
+.charsheet .sheet-ranged-attack-grid .sheet-grid-item-resize {
+    width:100%!important;
+    max-width:none;
+}
