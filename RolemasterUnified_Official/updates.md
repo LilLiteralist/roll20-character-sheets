@@ -1,3 +1,144 @@
+# 2024-9-17
+
+Miscalenous bug fix week!
+
+After one week of activity there are a number of bugs.  Talents seemed to cause most grief - I've
+fixed a lot of them.  Hopefully this means peoples sheets won't lock up anymore.
+
+Otherwise it's a whole host of little things.
+
+- Hair is now a box you can edit
+- Save gender set during character creation
+- Initiative:
+  - Fix the button so it works again (stupid roll20 quotes)
+  - Show the penalty in the result box
+  - Send the value to the tracker
+- Fix a few missing translation strings.
+- Set correct ranks for written languages.
+- On creation, make sure each stat gain has a unique name
+- Creature:
+  - Allow JSON and string items.
+  - RR rolls for creatures
+  - Injuries for creatures
+- Talents
+  - Save talent cost correctly for single tier talents
+  - Fix some of the talents that cause problems on some browsers.
+  - Handle more errors
+  - Delete a malformed talent in the database
+- Roll templates (side panel)
+  - Add basic darkmode support
+  - Put the results before the mods for skills and spell rolls.
+- Can edit height/weight/build on sheet
+- Stat gains uniquely identified during levelup
+- Fix for item's name's template in the compendium
+- Partial fix for vmabraces`greaves
+- Fix for short bow and long bow attack tables
+- Remove old Claw & Shockbolt hacks from compendium
+- Spells correct display of realm stats
+- Fix vambrace and greave ordering
+- Update equipment on deletion
+- Add a pending reset button to hopefully unjam people.
+- Add an animated icon when doing work
+
+
+# 2024-9-12
+
+The first post compendium release... and it's small.  This is a good thing.
+Sooner I get to Treasure Law I guess.
+
+
+- Rewrite the way we track spell lists on level up.
+  - Makes Hybrids happy; stops duplicated lists during level up
+  - Track lists from from the sheet side.  Should stop the annoying
+    duplicate spell list after level up.
+- Fix a problem with single tier talents not applying
+
+# 2024-9-10
+
+The headline feature of this weeks release is using CRP (Custom Roll Parsing)
+for skill rolls. This means we have a lot more descriptive text and information
+in skill rolls; similar to attacks and spells.
+
+Experimental support for custom spells has been added, and there is a way you
+can turn a sheet to a creature sheet.  More on that coming soon.
+
+Othwise there are lot of nits; hiding stun effects when you don't have any; and
+show current ranks when you level up.  For both skills and spells.
+
+- Skills:
+  - Use CRP for rolls
+  - Expand descirption and modifiers for use.
+- Custom Spells now supported (experimental)
+- Status effects like stun/staggered/bleed disappear if empty.
+- Spell mastery masters magic; not manipulates (message change)
+- Remove some injury debug.
+- Religion is now an attribute.
+- Compendium:
+  - Evaporate Liquid is not 1, and it's 1000 cu ft, not 000 cu ft
+  - Darkvision 10 + 5/tier. not 10+10
+  - Golden throat 5/tier
+  - Fix some minor grammar issues in some talent descriptions (.s and the like)
+- Talents:
+  - Fix costs with different per tier costs
+  - Add placeholder support for spell lists.
+- Optimisation: Reduce by ~3 number of API calls in updateSkils.
+- Force ' ' for empty skills when there was a value.
+- Attacks now have parry and 'other' modifiers (Long requested feature)
+- Fix a bug stoppind stun penalies from applying to spells
+- Levelup:
+  - Spells persist their ranks (again)
+  - Show current rank of simple skills
+  - Show current rank of specialised skills.
+  - Show current rank of spells
+- Creatures:
+  - Make creature loading more resiliant
+  - Add a hidden way to turn a sheet into a creature
+- Add a new preview image.
+
+# 2024-9-3
+
+- Bump sheet to version 3
+  - Version 3 has only 'Realm Stat' for SCRs, removes 'Realm Stat Bonus'
+- Clear high level spell names on updates.
+- Move defenses near RRs on the main page.
+- Spell display:
+  - Don't add Realm Stat to casting bonuses twice.
+  - Always put things [ ] (even hand bonusues) in description
+  - Display 'no voice' corrently (not undefined)
+- Attacks:
+  - Fix escaping for ')' on targets
+  - Fix for target size bug (typo I guess)
+  - Encode location in the damage string.
+- Actions
+  - Persist free action, and clear after 4 phases.
+  - Show the correct phase (relative, not the total)
+  - Add 'new combat' button
+- Status
+  - Display staggered/stun status
+  - Apply stun penalties to spells & attacks
+- Injuries
+  - Display knockback, grapple and other injury types
+  - Keep record of penalty based injuries
+  - Display injuries on Scratch page
+  - Add basic recovery rolls
+  - Set the location in the injury
+  - Can delete injuries
+- Bug fixes:
+  - Misc Remove Attr function now actually does something
+  - Fix minor (but amazinlgy irritating) bug in the AP description
+
+# 2024-8-29
+
+Bonus midweek update
+- Split injury handling out
+- Handle breakage penalties in criticals correctly
+- Improve layout of rolltemplates; only show Apply when it's useful
+- Condition tracking:
+  - Track current phase
+  - Handle bleeds
+- AP Tracking for attacks: Melee & Spells
+- Add special page to apply injuries
+
 # 2024-8-27
 
 - Add movement for creatures
